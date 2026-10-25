@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assessment | Intelligent Prompt Quality Assessment Framework</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="/" class="brand">
+          <span class="brand-icon">⚡</span>
+          <span class="brand-text">Prompt Quality</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="/" class="nav-link active">Assessment</a>
+          <a href="/history" class="nav-link">History</a>
+          <a href="/health" target="_blank" class="nav-link badge-link">API Health</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- Hero Title Section -->
+        <div class="hero-section">
+          <span class="project-tag">College ML Project · Scikit-Learn Random Forest</span>
+          <h1 class="hero-title">Intelligent Prompt Quality Assessment Framework</h1>
+          <p class="hero-subtitle">
+            An explainable Machine Learning system to analyze, grade, and enhance prompt quality for Generative AI systems.
+          </p>
+        </div>
+
+        <!-- Assessment Form Card -->
+        <section class="card form-card">
+          <div class="card-header">
+            <h2>Enter Prompt for Evaluation</h2>
+            <span id="counter" class="counter">0 words · 0 characters</span>
+          </div>
+
+          <!-- Choose Enterprise Domain Section -->
+          <div class="domain-selection-section">
+            <div class="domain-header-row">
+              <span class="domain-label">Choose Domain</span>
+              <span class="domain-selected-indicator">Selected Domain: <strong id="selected-domain-display">General</strong></span>
+            </div>
+            <div class="domain-tabs" role="tablist">
+              <button type="button" class="domain-tab" data-domain="HR" role="tab">HR</button>
+              <button type="button" class="domain-tab" data-domain="Finance" role="tab">Finance</button>
+              <button type="button" class="domain-tab" data-domain="Marketing" role="tab">Marketing</button>
+              <button type="button" class="domain-tab active" data-domain="General" role="tab">General</button>
+            </div>
+          </div>
+
+          <!-- Proper Import & Export Tools Section -->
+          <div class="file-toolbar">
+            <div class="import-group">
+              <input type="file" id="file-import-input" accept=".csv,.txt,.json" class="hidden" />
+              <button type="button" id="import-btn" class="btn btn-sm btn-import">
+                <span>📁 Import File (CSV, TXT, JSON)</span>
+              </button>
+              <span id="import-badge" class="import-badge hidden"></span>
+            </div>
+            <div class="export-group">
+              <a href="/export/csv" class="btn btn-sm btn-outline" title="Export assessment history as CSV">⬇ Export CSV</a>
+              <a href="/export/json" class="btn btn-sm btn-outline" title="Export assessment history as JSON">⬇ Export JSON</a>
+            </div>
+          </div>
+
+          <!-- Multi-Prompt Selector (shown when imported file has multiple prompts) -->
+          <div id="multi-prompt-bar" class="multi-prompt-bar hidden">
+            <label for="prompt-selector" class="prompt-selector-label">Imported Prompts:</label>
+            <select id="prompt-selector" class="prompt-selector-select"></select>
+          </div>
+
+          <form id="assess-form" method="POST" action="/analyze">
+            <input type="hidden" id="domain-input" name="domain" value="General">
+            <div class="form-group">
+              <textarea 
+                id="prompt-input" 
+                name="prompt" 
+                rows="6" 
+                placeholder="Type your prompt here... (e.g. 'Draft a structured job description for a Senior DevOps Engineer, outlining key technical requirements, experience criteria, and interview rubric.')"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Notification Banners -->
+            <div id="error-banner" class="alert-error hidden"></div>
+            <div id="import-banner" class="alert-success hidden"></div>
+
+            <!-- Sample Quick-Fill Chips -->
+            <div class="samples-wrapper">
+              <span class="samples-label">Quick Test Prompts:</span>
+              <button type="button" class="chip" onclick="fillDomainPrompt('HR', 'Draft 5 behavioral interview questions using the STAR framework to assess leadership and conflict resolution for a Senior Project Manager role.')">
+                HR Example
+              </button>
+              <button type="button" class="chip" onclick="fillDomainPrompt('Finance', 'Analyze the Q3 departmental budget variance between projected spend and actual expenditures, detailing cost drivers and risk mitigations.')">
+                Finance Example
+              </button>
+              <button type="button" class="chip" onclick="fillDomainPrompt('Marketing', 'Create a 3-part email campaign to reduce customer churn and convert trial users into paid annual subscribers, including subject lines and CTAs.')">
+                Marketing Example
+              </button>
+              <button type="button" class="chip" onclick="fillDomainPrompt('General', 'Draft an enterprise project roadmap outline with milestone timelines, KPI metrics, and operational risk mitigation guidelines.')">
+                General Example
+              </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions-row">
+              <button type="submit" id="analyze-btn" class="btn btn-primary">
+                <span class="btn-text">Analyze Prompt</span>
+                <span class="spinner hidden"></span>
+              </button>
+              <button type="button" id="clear-btn" class="btn btn-secondary">
+                Clear
+              </button>
+            </div>
+          </form>
+        </section>
+
+
+
+        <!-- Inline Assessment Result Container (revealed via AJAX or page render) -->
+        <section id="result-container" class="card result-card hidden">
+          <div class="result-header">
+            <div>
+              <span class="sub-heading">Assessment Result</span>
+              <h2 id="result-title">Quality Analysis</h2>
+              <div class="result-domain-banner">
+                <span class="domain-lead">Domain:</span>
+                <span id="result-domain-val" class="domain-result-pill">General</span>
+              </div>
+            </div>
+            <div class="badge-and-score">
+              <span id="category-badge" class="badge">Good</span>
+              <div class="score-display">
+                <span id="overall-score-val" class="score-number">0</span>
+                <span class="score-denom">/100</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quality Dimensions Grid -->
+          <div class="dimensions-grid">
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Clarity (30%)</span>
+                <span id="val-clarity" class="dim-score">0%</span>
+              </div>
+              <div class="progress-track">
+                <div id="bar-clarity" class="progress-bar" style="width: 0%"></div>
+              </div>
+              <p class="dim-desc">How clearly the prompt expresses the objective.</p>
+            </div>
+
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Specificity (30%)</span>
+                <span id="val-specificity" class="dim-score">0%</span>
+              </div>
+              <div class="progress-track">
+                <div id="bar-specificity" class="progress-bar" style="width: 0%"></div>
+              </div>
+              <p class="dim-desc">Detail of requirements, parameters, and constraints.</p>
+            </div>
+
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Completeness (20%)</span>
+                <span id="val-completeness" class="dim-score">0%</span>
+              </div>
+              <div class="progress-track">
+                <div id="bar-completeness" class="progress-bar" style="width: 0%"></div>
+              </div>
+              <p class="dim-desc">Adequacy of background context and output instructions.</p>
+            </div>
+
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Relevance (20%)</span>
+                <span id="val-relevance" class="dim-score">0%</span>
+              </div>
+              <div class="progress-track">
+                <div id="bar-relevance" class="progress-bar" style="width: 0%"></div>
+              </div>
+              <p class="dim-desc">Alignment with intended task domain and tone.</p>
+            </div>
+          </div>
+
+          <!-- Suggestions Section -->
+          <div class="info-block">
+            <h3>Improvement Suggestions</h3>
+            <ul id="suggestions-list" class="styled-list"></ul>
+          </div>
+
+          <!-- Improved Prompt Section -->
+          <div class="info-block">
+            <div class="block-header">
+              <h3>Improved Prompt</h3>
+              <button type="button" id="copy-btn" class="btn btn-sm btn-outline">Copy Improved Prompt</button>
+            </div>
+            <div class="improved-prompt-box">
+              <pre id="improved-prompt-text"></pre>
+            </div>
+            <div class="improved-actions">
+              <button type="button" id="use-improved-btn" class="btn btn-secondary">Test This Improved Prompt</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>College Machine Learning Project · Random Forest Regressor & SQLite · 100% Local Execution</p>
+    </footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

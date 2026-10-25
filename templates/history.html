@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History | Intelligent Prompt Quality Assessment Framework</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="/" class="brand">
+          <span class="brand-icon">⚡</span>
+          <span class="brand-text">Prompt Quality</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="/" class="nav-link">Assessment</a>
+          <a href="/history" class="nav-link active">History</a>
+          <a href="/health" target="_blank" class="nav-link badge-link">API Health</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <div class="hero-section">
+          <span class="project-tag">Database Persistence · SQLite</span>
+          <h1 class="hero-title">Assessment History</h1>
+          <p class="hero-subtitle">Log of evaluated prompts recorded in local SQLite database (database/prompt_quality.db).</p>
+        </div>
+
+        <section class="card table-card">
+          <div class="card-header flex-between">
+            <h2>Saved Evaluations</h2>
+            <div class="header-actions">
+              <input type="file" id="history-file-input" accept=".csv,.txt,.json" class="hidden" />
+              <button type="button" id="history-import-btn" class="btn btn-sm btn-import">📁 Import File</button>
+              <a href="/export/csv" class="btn btn-sm btn-secondary">⬇ Export CSV</a>
+              <a href="/export/json" class="btn btn-sm btn-secondary">⬇ Export JSON</a>
+              <button id="clear-history-btn" class="btn btn-sm btn-danger" onclick="clearHistory()">Clear History</button>
+              <a href="/" class="btn btn-sm btn-primary">New Assessment</a>
+            </div>
+
+
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width: 14%;">Domain</th>
+                  <th style="width: 44%;">Prompt</th>
+                  <th style="width: 14%;">Overall Score</th>
+                  <th style="width: 14%;">Category</th>
+                  <th style="width: 14%;">Date</th>
+                </tr>
+              </thead>
+              <tbody id="history-tbody">
+                {% for item in history %}
+                <tr>
+                  <td><span class="domain-result-pill">{{ item.domain or 'General' }}</span></td>
+                  <td class="prompt-cell" title="{{ item.prompt }}">{{ item.prompt }}</td>
+                  <td><strong class="score-pill">{{ item.overall_score | round | int }} / 100</strong></td>
+                  <td>
+                    <span class="badge badge-{{ item.category | lower | replace(' ', '-') }}">{{ item.category }}</span>
+                  </td>
+                  <td class="date-cell">{{ item.created_at }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                  <td colspan="5" class="empty-state">No assessments recorded in SQLite yet. Try analyzing a prompt!</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>College Machine Learning Project · Random Forest Regressor & SQLite · 100% Local Execution</p>
+    </footer>
+  </div>
+
+  <script>
+    async function clearHistory() {
+      if (!confirm('Are you sure you want to clear all assessment records from SQLite?')) {
+        return;
+      }
+      try {
+        const res = await fetch('/history', { method: 'DELETE' });
+        if (res.ok) {
+          window.location.reload();
+        } else {
+          alert('Failed to clear history.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Error connecting to backend.');
+      }
+    }
+
+    const historyImportBtn = document.getElementById('history-import-btn');
+    const historyFileInput = document.getElementById('history-file-input');
+
+    if (historyImportBtn && historyFileInput) {
+      historyImportBtn.addEventListener('click', () => {
+        historyFileInput.click();
+      });
+
+      historyFileInput.addEventListener('change', async () => {
+        const file = historyFileInput.files[0];
+        if (!file) return;
+
+
+        try {
+          const text = await file.text();
+          const filename = file.name.toLowerCase();
+          let prompts = [];
+
+          if (filename.endsWith('.csv')) {
+            const lines = text.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+            if (lines.length > 0) {
+              const header = lines[0].split(',').map(c => c.trim().toLowerCase());
+              const pIdx = header.indexOf('prompt');
+              const startIdx = pIdx !== -1 ? 1 : 0;
+              const colIdx = pIdx !== -1 ? pIdx : 0;
+              for (let i = startIdx; i < lines.length; i++) {
+                const cols = lines[i].split(',');
+                if (cols[colIdx] && cols[colIdx].trim()) prompts.push(cols[colIdx].trim());
+              }
+            }
+          } else if (filename.endsWith('.json')) {
+            const data = JSON.parse(text);
+            const list = Array.isArray(data) ? data : (data.prompts || data.data || []);
+            list.forEach(item => {
+              if (typeof item === 'string' && item.trim()) prompts.push(item.trim());
+              else if (item && typeof item === 'object') {
+                const p = item.prompt || item.text || '';
+                if (p.trim()) prompts.push(p.trim());
+              }
+            });
+          } else {
+            prompts = text.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+          }
+
+          if (prompts.length === 0) {
+            alert('No valid prompts found in the imported file.');
+            return;
+          }
+
+          sessionStorage.setItem('imported_prompts', JSON.stringify({
+            filename: file.name,
+            prompts: prompts
+          }));
+
+          window.location.href = '/';
+        } catch (err) {
+          console.error(err);
+          alert('Failed to read file: ' + err.message);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

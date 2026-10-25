@@ -1,0 +1,141 @@
+domain,prompt,clarity,specificity,completeness,relevance,quality_score
+HR,make behavioral interview question rubric,20.0,15.0,15.0,25.0,18.5
+HR,employee performance,15.0,10.0,15.0,20.0,14.5
+HR,job description,20.0,15.0,15.0,25.0,18.5
+HR,hire employees,15.0,10.0,10.0,20.0,13.5
+HR,give resume tips,25.0,20.0,20.0,30.0,23.5
+HR,hr policy stuff,15.0,10.0,15.0,20.0,14.5
+HR,training notes,20.0,15.0,15.0,20.0,17.5
+HR,onboarding list,20.0,15.0,15.0,25.0,18.5
+HR,fire staff,10.0,10.0,10.0,15.0,11.0
+HR,workplace rules,20.0,15.0,15.0,20.0,17.5
+HR,Write a job description for a software engineer position.,55.0,50.0,45.0,55.0,51.5
+HR,Create 5 behavioral interview questions using the STAR method for hiring a project manager.,60.0,55.0,48.0,58.0,55.7
+HR,Write an employee performance review template with rating scale from 1 to 5.,58.0,52.0,45.0,55.0,52.9
+HR,Draft an email welcoming a new employee to the engineering department.,58.0,50.0,45.0,56.0,52.6
+HR,Provide guidelines for conducting 30-day check-in meetings with new hires.,56.0,50.0,45.0,54.0,51.6
+HR,Write a policy for flexible remote work hours and core team collaboration time.,58.0,52.0,46.0,55.0,53.2
+HR,Suggest 5 team-building exercises for a distributed remote workforce.,55.0,48.0,45.0,52.0,50.3
+HR,Draft a rejection email for job candidates who interviewed for senior roles.,58.0,50.0,44.0,55.0,52.2
+HR,Create an agenda for annual employee performance calibration sessions.,56.0,52.0,45.0,54.0,52.2
+HR,Provide 4 strategies to reduce employee turnover in high-stress support teams.,58.0,52.0,46.0,55.0,53.2
+HR,"Develop a 4-week onboarding plan for junior software engineers. Include weekly milestones, mentor check-in schedules, and required repository access in a checklist format.",75.0,74.0,72.0,76.0,74.3
+HR,"Create an employee exit interview questionnaire with 10 questions covering management support, growth opportunities, compensation, and company culture.",76.0,75.0,70.0,76.0,74.5
+HR,Draft an engineering performance improvement plan (PIP) for junior developers struggling with sprint deliverables. Include 30-day and 60-day review milestones.,75.0,76.0,72.0,78.0,75.3
+HR,"Write a comprehensive job description for a Senior Data Scientist in HR analytics. Detail technical skills (Python, SQL, Tableau), responsibilities, and qualifications.",76.0,75.0,72.0,78.0,75.3
+HR,"Draft guidelines for conducting annual compensation reviews and merit salary adjustments. Include equity bands, performance ratings, and budget limits.",75.0,74.0,72.0,76.0,74.3
+HR,Develop a 5-step dispute resolution procedure for handling interpersonal conflicts between team members. Include HR escalation criteria and confidentiality terms.,75.0,74.0,70.0,75.0,73.7
+HR,"Write a leadership training curriculum for newly promoted engineering managers. Outline 4 modular workshops covering 1-on-1 coaching, delegation, and feedback.",76.0,75.0,72.0,76.0,74.9
+HR,"Draft an internal transfer policy for employees wishing to change departments after 12 months. Specify eligibility criteria, manager approval, and transition timelines.",75.0,74.0,70.0,75.0,73.7
+HR,"Create a structured rubric for evaluating software engineering technical interviews across coding, system design, and communication with 1-4 scale definitions.",76.0,76.0,72.0,78.0,75.6
+HR,"Write an employee wellness program proposal with quarterly initiatives covering mental health support, ergonomic office allowances, and gym memberships.",74.0,72.0,70.0,74.0,72.6
+HR,"Act as an Enterprise People Operations and Talent Strategy Director. Develop a comprehensive engineering performance improvement plan (PIP) template for junior developers struggling with sprint delivery deadlines. Include objective 30-60-90 day milestones, bi-weekly check-in schedules, mentorship pairing resources, measurable code quality KPIs, and appeal guidelines. Format in a structured markdown table.",94.0,94.0,90.0,96.0,93.6
+HR,"Act as an HR People Operations Director. Design a 90-day executive onboarding roadmap for a newly hired Vice President of Engineering. Outline specific 30, 60, and 90-day objectives, key stakeholder alignment meetings with C-level executives, department talent audits, and strategic deliverable gates formatted as a numbered timeline with verification criteria.",95.0,94.0,92.0,96.0,94.3
+HR,"Act as an Enterprise Talent Acquisition Lead. Create an end-to-end recruitment playbook for scaling our cloud engineering department by 50 hires across Q3 and Q4. Define candidate sourcing channels, technical evaluation rubrics, interview loop stages, target offer acceptance benchmarks of 85%, and turnaround SLA targets in a markdown specification table.",94.0,95.0,90.0,95.0,93.7
+HR,"Act as an Enterprise Diversity and Inclusion Director. Formulate an equitable hiring and workplace inclusion audit protocol for regional tech hubs. Provide quantitative metrics for gender pay equity, interview panel diversity requirements, anonymized resume screening workflows, and quarterly employee sentiment benchmarks formatted as an executive brief.",92.0,94.0,90.0,94.0,92.6
+HR,"Act as a Senior HR Compliance Officer. Draft an enterprise workplace anti-harassment and whistleblower standard operating procedure. Specify confidential incident reporting channels, investigation timelines (max 10 business days), evidence preservation protocols, disciplinary escalation matrix, and legal compliance obligations in clear numbered sections.",95.0,94.0,92.0,96.0,94.3
+Finance,finance report,20.0,15.0,15.0,25.0,18.5
+Finance,budget plan,20.0,15.0,15.0,25.0,18.5
+Finance,crypto analysis,25.0,15.0,20.0,25.0,21.0
+Finance,calculate roi,20.0,15.0,15.0,25.0,18.5
+Finance,expense tracking,15.0,10.0,15.0,20.0,14.5
+Finance,tax calculation,20.0,15.0,15.0,20.0,17.5
+Finance,revenue numbers,15.0,10.0,15.0,20.0,14.5
+Finance,cost benefit,20.0,15.0,15.0,20.0,17.5
+Finance,balance sheet,15.0,10.0,15.0,20.0,14.5
+Finance,audit stuff,15.0,10.0,10.0,15.0,12.5
+Finance,Write an executive summary of our quarterly budget performance.,58.0,50.0,45.0,55.0,52.4
+Finance,Explain how discounted cash flow (DCF) valuation works with a simple formula.,58.0,52.0,46.0,55.0,53.2
+Finance,Create a monthly expense budget template for a small software business.,58.0,52.0,45.0,54.0,52.8
+Finance,Analyze the causes of operating cost increases between Q1 and Q2.,56.0,50.0,45.0,55.0,51.8
+Finance,Explain the difference between capital expenditures (CapEx) and operational expenditures (OpEx).,58.0,52.0,46.0,55.0,53.2
+Finance,"Write a memo justifying a ,000 budget increase for cloud hosting infrastructure.",58.0,52.0,45.0,55.0,53.0
+Finance,Draft guidelines for departmental petty cash management and employee reimbursement.,56.0,50.0,45.0,54.0,51.6
+Finance,Provide 4 financial ratios to evaluate the liquidity and solvency of a tech startup.,58.0,52.0,46.0,55.0,53.2
+Finance,Summarize the financial risks of foreign currency fluctuations on imported hardware.,58.0,50.0,45.0,55.0,52.4
+Finance,Create a 5-step checklist for closing financial accounts at the end of each quarter.,58.0,52.0,45.0,54.0,52.8
+Finance,"Draft a 300-word executive summary of an HR onboarding automation project for the Vice President of Finance. Highlight cost savings of 20%, reduction in ramp-up time, and key financial milestones.",75.0,78.0,72.0,76.0,75.5
+Finance,Write a comparative financial analysis between AWS on-demand pricing and 3-year reserved instances for 50 production servers. Include break-even analysis and estimated 35% savings.,76.0,76.0,72.0,78.0,75.6
+Finance,"Develop a quarterly budget variance report template for Engineering department spend. Include columns for budgeted amount, actual spend, variance percentage, and variance rationale.",76.0,75.0,72.0,78.0,75.3
+Finance,"Write a financial risk assessment memo evaluating an enterprise software subscription contract renewal of ,000. Discuss multi-year lock-in, escalation caps, and termination penalties.",75.0,76.0,72.0,76.0,74.9
+Finance,"Create a cost-benefit analysis framework for automating invoice processing in the Accounts Payable department. Quantify labor cost reduction, error rate decrease, and expected 18-month payback period.",76.0,76.0,72.0,78.0,75.6
+Finance,"Draft a corporate travel and expense policy guideline. Specify daily per-diem allowances for domestic vs international travel, receipt verification rules, and expense report submission deadlines.",75.0,75.0,70.0,76.0,74.2
+Finance,"Develop a rolling 12-month cash flow forecast model methodology for a B2B SaaS startup. Detail recurring subscription receipts, vendor payables, payroll allocations, and minimum safety reserves.",76.0,75.0,72.0,78.0,75.3
+Finance,"Draft an enterprise audit preparation checklist for our annual SOC 1 financial controls audit. Cover general ledger reconciliations, segregation of duties, and access authorization logs.",75.0,75.0,70.0,76.0,74.2
+Finance,Explain how internal rate of return (IRR) and net present value (NPV) are calculated for evaluating capital equipment investments with a concrete numerical case study.,76.0,75.0,72.0,76.0,74.9
+Finance,"Write an executive briefing on managing rising SaaS software licensing costs across departments. Provide 3 optimization levers: license tier downgrades, duplicate tool consolidation, and contract renegotiation.",75.0,76.0,72.0,76.0,74.9
+Finance,"Act as a Principal Financial Analyst. Draft an executive quarterly budget variance report for C-level leadership. Evaluate departmental spend across Engineering, Marketing, and Operations against Q3 FY26 targets. Specify benchmark allocations of ,000, variance percentages, three concrete financial risk factors, and cost-containment recommendations. Format as an executive brief followed by a structured markdown table with columns: Department, Budget, Actual, Variance %, Mitigation.",95.0,95.0,92.0,96.0,94.6
+Finance,"Act as a Senior Financial Planning and Analysis Director. Formulate a 3-year financial model and capital expenditure plan for migrating enterprise data centers to a hybrid cloud infrastructure. Include total cost of ownership (TCO) benchmarks, five-year depreciation schedules, discount rate assumptions of 8%, sensitivity analysis on compute spikes, and a summary ROI matrix formatted as a structured specification.",94.0,95.0,90.0,96.0,93.9
+Finance,"Act as a Chief Financial Officer (CFO). Develop an enterprise treasury and liquidity risk management framework for our international subsidiaries. Detail multi-currency hedging strategies, minimum working capital thresholds of ,000,000, cash pooling structures, credit line covenants, and weekly liquidity stress-testing protocols formatted in an executive policy brief.",94.0,94.0,92.0,96.0,94.0
+Finance,"Act as an Enterprise Corporate Controller. Create a comprehensive revenue recognition standard operating procedure under ASC 606 for multi-year enterprise SaaS contracts. Provide a 5-step analysis framework covering contract identification, distinct performance obligations, transaction price allocation, and milestone recognition gates with concrete journal entry examples.",95.0,94.0,92.0,96.0,94.3
+Finance,"Act as an Enterprise M&A Financial Due Diligence Lead. Write a pre-acquisition financial evaluation brief for acquiring a ,000,000 annual recurring revenue (ARR) competitor. Analyze gross revenue retention rate, customer lifetime value to CAC ratio, EBITDA normalization adjustments, debt covenants, and working capital peg calculations in a markdown table format.",95.0,95.0,92.0,96.0,94.6
+Marketing,marketing ideas,25.0,15.0,20.0,30.0,21.5
+Marketing,write ad copy,20.0,15.0,15.0,25.0,18.5
+Marketing,social media post,20.0,15.0,15.0,25.0,18.5
+Marketing,seo tips,20.0,15.0,15.0,20.0,17.5
+Marketing,sales email,20.0,15.0,15.0,25.0,18.5
+Marketing,product promotion,20.0,15.0,15.0,20.0,17.5
+Marketing,campaign stuff,15.0,10.0,15.0,20.0,14.5
+Marketing,generate leads,20.0,15.0,15.0,25.0,18.5
+Marketing,make newsletter,20.0,15.0,15.0,20.0,17.5
+Marketing,target customer,15.0,10.0,10.0,20.0,13.5
+Marketing,Give me 5 digital marketing ideas for an enterprise B2B SaaS platform.,58.0,52.0,48.0,55.0,53.6
+Marketing,Write a promotional email announcing our annual software subscription discount.,58.0,50.0,45.0,56.0,52.6
+Marketing,Suggest 4 blog post topics to attract enterprise IT managers to our website.,56.0,50.0,45.0,55.0,51.8
+Marketing,"Draft a LinkedIn post announcing that our company reached 10,000 customers.",58.0,50.0,44.0,55.0,52.2
+Marketing,Create a customer feedback survey with 5 questions to measure Net Promoter Score (NPS).,58.0,52.0,45.0,55.0,53.0
+Marketing,Write headline variations for Google Ads targeting enterprise cloud migration search keywords.,58.0,52.0,46.0,56.0,53.4
+Marketing,Provide tips to optimize landing page conversion rates for mobile smartphone visitors.,56.0,50.0,45.0,54.0,51.6
+Marketing,Draft a press release outline announcing our series-B venture funding round of  million.,58.0,52.0,45.0,55.0,53.0
+Marketing,Suggest 3 re-engagement email sequence ideas to win back inactive SaaS customers.,56.0,50.0,45.0,55.0,51.8
+Marketing,Explain how to design an automated email marketing drip campaign for prospective buyers.,58.0,52.0,46.0,55.0,53.2
+Marketing,"Develop a 30-day product launch campaign roadmap for an AI analytics platform. Specify target audience channels (LinkedIn, webinars), weekly content deliverables, and conversion KPIs in a table.",76.0,76.0,72.0,78.0,75.6
+Marketing,"Draft a high-converting landing page copy structure for an enterprise cybersecurity software product. Include an attention-grabbing hero section, 3 customer pain points, social proof metrics, and clear CTA.",76.0,75.0,72.0,78.0,75.3
+Marketing,"Write an email marketing nurture sequence consisting of 3 emails for enterprise CTOs who downloaded our whitepaper. Detail subject lines, value propositions, and CTA buttons.",75.0,76.0,72.0,76.0,74.9
+Marketing,"Develop a comprehensive customer persona profile for a Chief Information Security Officer (CISO) at a financial institution. Outline core KPIs, top 3 objections, preferred media, and budget authority.",76.0,75.0,72.0,78.0,75.3
+Marketing,"Draft a webinar promotional plan targeting enterprise marketing leaders. Include email invitation copy, speaker bio template, LinkedIn sponsored ad snippets, and a post-event attendee survey.",75.0,75.0,70.0,76.0,74.2
+Marketing,Write a comparative content marketing strategy evaluating SEO blog content versus technical whitepapers for B2B buyer generation. Provide expected cost per acquisition and lead quality estimates.,75.0,76.0,72.0,76.0,74.9
+Marketing,"Develop an influencer partnership guideline for collaborating with enterprise tech thought leaders on YouTube and LinkedIn. Outline FTC disclosure rules, deliverable requirements, and engagement metrics.",74.0,74.0,70.0,75.0,73.4
+Marketing,"Draft an account-based marketing (ABM) campaign plan for top 20 tier-1 banking enterprise targets. Outline customized direct mail packages, executive dinner invitations, and tailored digital ads.",76.0,75.0,72.0,78.0,75.3
+Marketing,"Create a competitive battlecard for sales reps comparing our analytics platform against top competitor Product X. Outline our 3 key differentiators, pricing advantage, and counter-arguments to competitor claims.",76.0,76.0,72.0,78.0,75.6
+Marketing,"Write a customer case study outline demonstrating how an e-commerce client reduced cart abandonment by 24% using our automated push notification engine. Include Challenge, Solution, and Results sections.",75.0,76.0,72.0,78.0,75.3
+Marketing,"Act as a Chief Marketing Officer. Develop an enterprise B2B SaaS go-to-market launch strategy for our new generative AI analytics platform. Define target enterprise buyer personas (CTO, VP of Engineering), customer acquisition channels, a ,000 marketing budget breakdown across digital and events, expected conversion metrics (target 2.5% MQL to SQL conversion), and a 60-day launch schedule formatted in a structured markdown table.",95.0,95.0,92.0,96.0,94.6
+Marketing,"Act as a Strategic Enterprise Growth and Product Marketing Lead. Design an integrated multi-channel account-based marketing (ABM) campaign targeting 50 Fortune 500 financial institutions. Outline personalized direct mail touchpoints, executive briefing dinner formats, account-specific LinkedIn programmatic ads, sales development outreach sequences, and conversion SLAs in a structured specification matrix.",94.0,95.0,90.0,96.0,93.9
+Marketing,"Act as an Enterprise Brand Strategy Director. Formulate a complete corporate rebranding messaging architecture for our transition from legacy hardware to a cloud software provider. Detail brand vision, value pillars, tone-of-voice rules, customer persona value matrices, and an external press release brief formatted with clear markdown headers and bullet points.",94.0,94.0,92.0,95.0,93.8
+Marketing,"Act as a Senior Performance Marketing Lead. Build a digital paid acquisition allocation model for our ,000 annual digital spend across Google Search, LinkedIn Ads, and programmatic display. Include cost-per-click benchmarks, target customer acquisition cost (CAC under ), multi-touch attribution weighting, and quarterly CAC payback timeline projections in a structured markdown table.",95.0,94.0,92.0,96.0,94.3
+Marketing,"Act as a Global Customer Retention and Lifecycle Marketing Director. Formulate an automated customer churn mitigation and win-back playbook for enterprise SaaS accounts showing declining platform usage. Outline early-warning health score triggers, automated customer success outreach workflows, concession incentives up to 15% discount, and executive escalation protocols.",94.0,95.0,90.0,96.0,93.9
+General,tell me about AI,25.0,15.0,20.0,30.0,21.5
+General,code for app,15.0,10.0,15.0,20.0,14.5
+General,write essay,20.0,10.0,15.0,25.0,16.5
+General,fix this bug,25.0,15.0,20.0,30.0,21.5
+General,help with homework,20.0,10.0,15.0,25.0,16.5
+General,python code,15.0,10.0,15.0,20.0,14.5
+General,make a website,20.0,15.0,15.0,25.0,18.5
+General,database stuff,15.0,10.0,15.0,20.0,14.5
+General,summary,10.0,10.0,10.0,15.0,11.0
+General,explain science,25.0,15.0,20.0,25.0,21.0
+General,Explain machine learning to a beginner with simple examples.,55.0,48.0,45.0,52.0,50.3
+General,Write a python script to parse CSV files and print summary statistics.,58.0,52.0,45.0,55.0,53.0
+General,Summarize the core differences between SQL and NoSQL database engines.,58.0,50.0,45.0,54.0,52.2
+General,"Explain how REST API endpoints work using GET, POST, PUT, and DELETE methods.",58.0,52.0,46.0,55.0,53.2
+General,How to configure CORS in a web application safely with origins.,58.0,52.0,45.0,54.0,52.8
+General,Describe how git branching works and compare git merge vs git rebase.,58.0,52.0,46.0,55.0,53.2
+General,Explain public key cryptography and RSA encryption with a clear concept.,58.0,52.0,48.0,54.0,53.4
+General,Provide a 10-point checklist for launching a new web application safely.,58.0,52.0,48.0,52.0,53.0
+General,Write unit tests for a user login verification function in Python.,58.0,52.0,45.0,54.0,52.8
+General,Explain recursion vs iteration in programming with code snippets.,58.0,52.0,46.0,54.0,53.0
+General,"Write a Python function to parse customer sales CSV files, calculate monthly revenue averages, and handle missing values using pandas. Include inline comments.",75.0,75.0,70.0,75.0,74.0
+General,Explain the working principle of Transformer attention mechanism to undergraduate computer science students. Use a step-by-step numbered breakdown and include a real-world translation example.,76.0,75.0,70.0,76.0,74.5
+General,"Generate a 5-step disaster recovery checklist for a small cloud startup using AWS. Include responsible roles, recovery time objectives (RTO), and verify steps in a markdown list.",75.0,76.0,72.0,76.0,74.9
+General,Write a professional email to client stakeholders explaining a two-day delay in feature release due to database migration. Suggest alternative workarounds and maintain a reassuring tone.,75.0,72.0,70.0,75.0,73.1
+General,"Create a comparative analysis table between PostgreSQL and MongoDB for an e-commerce platform. Evaluate on query speed, scaling, ACID compliance, and schema flexibility.",76.0,75.0,72.0,76.0,74.9
+General,"Compare Random Forest and Gradient Boosting algorithms on tabular data. Discuss hyperparameters, overfitting risk, training speed, and interpretability in a bulleted list.",75.0,74.0,70.0,75.0,73.7
+General,"Write an API specification in markdown format for a user authentication endpoint (POST /api/login). Include request schema, success 200 response, and 401 error response.",76.0,75.0,70.0,76.0,74.5
+General,"Explain how HTTPS establishes a secure TLS connection step-by-step. Include the handshake exchange, certificate verification, and session key generation.",76.0,75.0,70.0,76.0,74.5
+General,"Provide 5 concrete tips for optimizing SQL queries with large joins on PostgreSQL. Include index usage, EXPLAIN ANALYZE, and avoiding SELECT * with explanations.",75.0,76.0,72.0,76.0,74.9
+General,"Write a bash script to automate daily database backups, compress with gzip, and delete backups older than 7 days. Include logging and error checking.",75.0,76.0,70.0,75.0,74.3
+General,Explain artificial intelligence to first-year computer science students in simple language with three real-world examples.,88.0,85.0,82.0,92.0,86.7
+General,"Act as a Senior Machine Learning Engineer. Explain how the Random Forest algorithm works to undergraduate students. Include how bootstrap aggregating (bagging) reduces variance, how feature subspace selection works, and provide two real-world enterprise applications. Keep the tone academic yet accessible, and format with clear markdown headings and bullet points.",94.0,92.0,90.0,94.0,92.6
+General,"Act as an Enterprise Cloud Architect. Design an incident response protocol for a mission-critical e-commerce database outage during Black Friday. Provide a step-by-step mitigation workflow with defined roles, communication channels, target SLA recovery time under 15 minutes, and a post-mortem review checklist in a markdown table format.",95.0,94.0,92.0,94.0,93.9
+General,"Act as a Senior DevOps Engineer. Write a production-ready Dockerfile and docker-compose.yml configuration for a Flask REST API connected to a PostgreSQL database and Redis cache. Include multi-stage builds, non-root user permissions, health check endpoints, environment variable declarations, and volume persistence.",94.0,94.0,90.0,94.0,93.2
+General,"Act as a Senior Database Administrator. Write a comprehensive migration playbook for moving a 500GB MySQL production database to PostgreSQL with zero data loss and under 15 minutes of scheduled maintenance downtime. Include pre-migration schema mapping, data validation scripts, pgloader setup, dual-write synchronization, rollback criteria, and post-cutover integrity checks.",95.0,96.0,92.0,95.0,94.7

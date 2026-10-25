@@ -1,0 +1,90 @@
+{
+  "framework": "Custom Prompt Quality Assessment Machine Learning Model",
+  "version": "1.0.0",
+  "selected_model": "Linear Regression (OLS)",
+  "total_training_samples": 3500,
+  "total_test_samples": 750,
+  "feature_count": 72,
+  "test_metrics": {
+    "mae": 1.097,
+    "rmse": 1.3347,
+    "r2": 0.9183,
+    "accuracy": 0.9107,
+    "dimension_maes": {
+      "clarity": 1.3237,
+      "specificity": 1.3774,
+      "context": 1.1256,
+      "completeness": 1.1973,
+      "task_definition": 0.7459,
+      "constraints": 1.0007,
+      "output_format": 0.9082
+    },
+    "confusion_matrix": {
+      "Poor": {
+        "Poor": 150,
+        "Weak": 11,
+        "Average": 0,
+        "Good": 0,
+        "Excellent": 0
+      },
+      "Weak": {
+        "Poor": 46,
+        "Weak": 134,
+        "Average": 4,
+        "Good": 0,
+        "Excellent": 0
+      },
+      "Average": {
+        "Poor": 0,
+        "Weak": 0,
+        "Average": 191,
+        "Good": 1,
+        "Excellent": 0
+      },
+      "Good": {
+        "Poor": 0,
+        "Weak": 0,
+        "Average": 0,
+        "Good": 141,
+        "Excellent": 5
+      },
+      "Excellent": {
+        "Poor": 0,
+        "Weak": 0,
+        "Average": 0,
+        "Good": 0,
+        "Excellent": 67
+      }
+    }
+  },
+  "model_comparison": [
+    {
+      "model": "Linear Regression (OLS)",
+      "mae": 1.11,
+      "rmse": 1.3465,
+      "r2": 0.9181,
+      "accuracy": 0.908
+    },
+    {
+      "model": "Ridge Regression (L2)",
+      "mae": 1.1109,
+      "rmse": 1.3464,
+      "r2": 0.9181,
+      "accuracy": 0.908
+    },
+    {
+      "model": "Gradient Boosted Regressor",
+      "mae": 1.729,
+      "rmse": 2.2226,
+      "r2": 0.7768,
+      "accuracy": 0.3387
+    },
+    {
+      "model": "Custom Feedforward Neural Network",
+      "mae": 3.0024,
+      "rmse": 3.6728,
+      "r2": 0.3906,
+      "accuracy": 0.2307
+    }
+  ]
+}

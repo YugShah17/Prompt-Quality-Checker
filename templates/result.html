@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result | Intelligent Prompt Quality Assessment Framework</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="/" class="brand">
+          <span class="brand-icon">⚡</span>
+          <span class="brand-text">Prompt Quality</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="/" class="nav-link">Assessment</a>
+          <a href="/history" class="nav-link">History</a>
+          <a href="/health" target="_blank" class="nav-link badge-link">API Health</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <div class="hero-section">
+          <span class="project-tag">Machine Learning Evaluation</span>
+          <h1 class="hero-title">Assessment Result</h1>
+          <p class="hero-subtitle">Detailed evaluation metrics predicted by the Random Forest Regressor.</p>
+        </div>
+
+        <!-- Result Card -->
+        <section class="card result-card">
+          <div class="result-header">
+            <div>
+              <span class="sub-heading">Analyzed Prompt</span>
+              <p class="analyzed-prompt-text">"{{ result.prompt }}"</p>
+              <div class="result-domain-banner">
+                <span class="domain-lead">Domain:</span>
+                <span class="domain-result-pill">{{ result.domain or 'General' }}</span>
+              </div>
+            </div>
+            <div class="badge-and-score">
+              <span class="badge badge-{{ result.category | lower | replace(' ', '-') }}">{{ result.category }}</span>
+              <div class="score-display">
+                <span class="score-number">{{ result.overall_score | round | int }}</span>
+                <span class="score-denom">/100</span>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Quality Dimensions Grid -->
+          <div class="dimensions-grid">
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Clarity (30%)</span>
+                <span class="dim-score">{{ result.clarity }}%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="width: {{ result.clarity }}%"></div>
+              </div>
+              <p class="dim-desc">How clearly the prompt expresses the task objective.</p>
+            </div>
+
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Specificity (30%)</span>
+                <span class="dim-score">{{ result.specificity }}%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="width: {{ result.specificity }}%"></div>
+              </div>
+              <p class="dim-desc">Level of specific requirements, parameters, and constraints.</p>
+            </div>
+
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Completeness (20%)</span>
+                <span class="dim-score">{{ result.completeness }}%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="width: {{ result.completeness }}%"></div>
+              </div>
+              <p class="dim-desc">Sufficiency of context, background, and output format directives.</p>
+            </div>
+
+            <div class="dimension-box">
+              <div class="dim-header">
+                <span class="dim-title">Relevance (20%)</span>
+                <span class="dim-score">{{ result.relevance }}%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="width: {{ result.relevance }}%"></div>
+              </div>
+              <p class="dim-desc">Suitability and relevance of the instruction for the target task.</p>
+            </div>
+          </div>
+
+          <!-- Suggestions Block -->
+          <div class="info-block">
+            <h3>Improvement Suggestions</h3>
+            <ul class="styled-list">
+              {% for s in result.suggestions %}
+                <li>{{ s }}</li>
+              {% else %}
+                <li>Prompt fulfills quality standards with high clarity and complete directives.</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <!-- Improved Prompt Block -->
+          <div class="info-block">
+            <div class="block-header">
+              <h3>Improved Prompt</h3>
+              <button type="button" class="btn btn-sm btn-outline" onclick="copyImproved()">Copy Prompt</button>
+            </div>
+            <div class="improved-prompt-box">
+              <pre id="improved-prompt-pre">{{ result.improved_prompt }}</pre>
+            </div>
+          </div>
+
+          <!-- Action navigation -->
+          <div class="actions-row mt-4">
+            <a href="/" class="btn btn-primary">Assess Another Prompt</a>
+            <a href="/history" class="btn btn-secondary">View Assessment History</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>College Machine Learning Project · Random Forest Regressor & SQLite · 100% Local Execution</p>
+    </footer>
+  </div>
+
+  <script>
+    function copyImproved() {
+      const text = document.getElementById('improved-prompt-pre').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Improved prompt copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>

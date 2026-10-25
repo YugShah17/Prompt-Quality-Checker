@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Keys
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Node / Build artifacts
+node_modules/
+dist/
+build/
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+~$*
+temp/

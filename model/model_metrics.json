@@ -1,0 +1,47 @@
+{
+  "dataset_size": 5000,
+  "train_samples": 4000,
+  "test_samples": 1000,
+  "overall_metrics": {
+    "MAE": 5.07,
+    "RMSE": 6.51,
+    "R2": 0.9206
+  },
+  "dimension_metrics": {
+    "clarity": {
+      "MAE": 1.426,
+      "RMSE": 1.805,
+      "R2": 0.8193
+    },
+    "specificity": {
+      "MAE": 1.547,
+      "RMSE": 1.919,
+      "R2": 0.8509
+    },
+    "context": {
+      "MAE": 1.291,
+      "RMSE": 1.593,
+      "R2": 0.857
+    },
+    "completeness": {
+      "MAE": 1.296,
+      "RMSE": 1.572,
+      "R2": 0.8042
+    },
+    "task_definition": {
+      "MAE": 0.839,
+      "RMSE": 1.008,
+      "R2": 0.7363
+    },
+    "constraints": {
+      "MAE": 1.032,
+      "RMSE": 1.227,
+      "R2": 0.7857
+    },
+    "output_format": {
+      "MAE": 0.978,
+      "RMSE": 1.191,
+      "R2": 0.8362
+    }
+  }
+}

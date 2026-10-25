@@ -1,0 +1,44 @@
+{
+  "manual_features": [
+    "char_count",
+    "word_count",
+    "sentence_count",
+    "avg_word_length",
+    "vocab_richness",
+    "num_numbers",
+    "num_percentages",
+    "num_currencies",
+    "has_role",
+    "has_context",
+    "has_audience",
+    "has_task",
+    "has_output_format",
+    "has_constraints",
+    "has_examples",
+    "has_ambiguous",
+    "num_imperative_verbs",
+    "num_question_words",
+    "num_format_mentions",
+    "num_constraint_mentions",
+    "num_bullet_or_numbering",
+    "avg_sentence_length"
+  ],
+  "dimension_names": [
+    "clarity",
+    "specificity",
+    "context",
+    "completeness",
+    "task_definition",
+    "constraints",
+    "output_format"
+  ],
+  "dimension_max_scores": {
+    "clarity": 20,
+    "specificity": 20,
+    "context": 15,
+    "completeness": 15,
+    "task_definition": 10,
+    "constraints": 10,
+    "output_format": 10
+  }
+}
